@@ -117,21 +117,40 @@
   /**
    * Init swiper sliders
    */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
+  document.addEventListener('DOMContentLoaded', () => {
+    const testimonialsSection = document.querySelector('#testimonials');
+  
+    // Inicializa el carrusel
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 5000,
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      on: {
+        slideChange: function () {
+          const activeSlide = this.slides[this.activeIndex];
+          const backgroundUrl = activeSlide.getAttribute('data-background');
+          if (backgroundUrl) {
+            testimonialsSection.style.backgroundImage = `url('${backgroundUrl}')`;
+          }
+        },
+      },
     });
-  }
-
-  window.addEventListener("load", initSwiper);
+  
+    // Establece el fondo inicial al cargar
+    const initialSlide = document.querySelector('.swiper-slide[data-background]');
+    if (initialSlide) {
+      const initialBackground = initialSlide.getAttribute('data-background');
+      testimonialsSection.style.backgroundImage = `url('${initialBackground}')`;
+    }
+  });
 
   /**
    * Frequently Asked Questions Toggle
