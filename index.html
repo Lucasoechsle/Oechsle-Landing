@@ -33,7 +33,7 @@
           <li><a href="#about">Servicios</a></li>
           <li><a href="#testimonials">Distribuciones</a></li>
           <li><a href="#contact">Contacto</a></li>
-          <li><a href="#">App Clientes</a></li>
+          <li><a href="https://oechsle.osapp.com.ar/" target="_blank" rel="noopener noreferrer">App Clientes</a></li>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
     </div>
@@ -261,21 +261,22 @@
             </div>
           </div>
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="200">
+            <form action="https://formsubmit.co/tomasoechsle@gmail.com" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" name="name" class="form-control" placeholder="Tu nombre" required>
                 </div>
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Tu Email" required>
                 </div>
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
                 </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
+                </div>
+                <input type="hidden" name="_next" value="https://carwo.com.ar/">
+                <input type="hidden" name="_captcha" value="false">
                 <div class="col-md-12 text-center">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
